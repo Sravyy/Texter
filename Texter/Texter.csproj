@@ -29,10 +29,23 @@
 
   <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="Views\Contacts\" />
+    <Folder Include="Views\Contact\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Models\contacts.cs" />
+    <Compile Remove="Migrations\20180123172220_Inital.Designer.cs" />
+    <Compile Remove="Migrations\20180123172220_Inital.cs" />
+    <Compile Remove="Migrations\20180123173755_AddContactIdToMessage.Designer.cs" />
+    <Compile Remove="Migrations\20180123173755_AddContactIdToMessage.cs" />
+    <Compile Remove="Migrations\20180123182457_AddMessageContactsManyToManyTable.Designer.cs" />
+    <Compile Remove="Migrations\20180123182457_AddMessageContactsManyToManyTable.cs" />
+    <Compile Remove="Migrations\20180123182625_AddMessageContactsManyToManyTables.Designer.cs" />
+    <Compile Remove="Migrations\20180123182625_AddMessageContactsManyToManyTables.cs" />
+    <Compile Remove="Migrations\TexterDbContextModelSnapshot.cs" />
+    <Compile Remove="Migrations\20180123182731_AddMessageContactsManyToManyTables.Designer.cs" />
+    <Compile Remove="Migrations\20180123182731_AddMessageContactsManyToManyTables.cs" />
+    <Compile Remove="Migrations\20180123185603_AddContactIdToMessage.Designer.cs" />
+    <Compile Remove="Migrations\20180123185603_AddContactIdToMessage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Views\Home\Contact.cshtml" />

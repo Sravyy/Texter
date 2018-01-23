@@ -8,9 +8,10 @@ using Texter.Models;
 namespace Texter.Migrations
 {
     [DbContext(typeof(TexterDbContext))]
-    partial class TexterDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180123182625_AddMessageContactsManyToManyTables")]
+    partial class AddMessageContactsManyToManyTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2");
@@ -37,8 +38,6 @@ namespace Texter.Migrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Body");
-
-                    b.Property<int>("ContactId");
 
                     b.Property<string>("From");
 

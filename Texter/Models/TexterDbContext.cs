@@ -27,7 +27,18 @@ namespace Texter.Models
 
 		protected override void OnModelCreating(ModelBuilder builder)
 		{
-			base.OnModelCreating(builder);
+			builder.Entity<MessageContact>()
+			.HasKey(t => new { t.MessageId, t.ContactId });
+
+			builder.Entity<MessageContact>()
+				.HasOne(pt => pt.Message)
+				.WithMany(p => p.MessageContacts)
+				.HasForeignKey(pt => pt.MessageId);
+
+			builder.Entity<MessageContact>()
+				.HasOne(pt => pt.Contact)
+				.WithMany(t => t.MessageContacts)
+				.HasForeignKey(pt => pt.ContactId);
 		}
 
     }

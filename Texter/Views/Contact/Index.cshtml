@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Texter.Models.Contact>
+
+@{
+    ViewData["Title"] = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="indexviews">
+    <h2>Contacts</h2>
+    <hr />
+    <table class="table">
+            <tr>
+                <th>
+                      @Html.DisplayNameFor(model => model.FirstName)
+                </th>
+                <th>
+                      @Html.DisplayNameFor(model => model.LastName)
+                </th>
+                <th>
+                      @Html.DisplayNameFor(model => model.PhoneNo)
+                </th>
+
+                <th></th>
+            </tr>
+
+            @foreach (var listContact in Model)
+            {
+                <tr>
+                    <td>
+                        <a>@Html.DisplayFor(x => listContact.FirstName)</a>
+                    </td>
+                    <td>
+                          @Html.DisplayFor(x => listContact.LastName)
+                    </td>
+                    <td>
+                          @Html.DisplayFor(x => listContact.PhoneNo)
+                    </td>
+
+
+                </tr>
+            }
+    </table>
+
+    <p>
+        @Html.ActionLink("Add New Contact", "Create")
+    </p>
+
+    <p>@Html.ActionLink("Back to Home", "Index", "Home")</p>

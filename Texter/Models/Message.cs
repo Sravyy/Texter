@@ -20,13 +20,29 @@ namespace Texter.Models
         public string From { get; set; }
         public string Body { get; set; }
         public string Status { get; set; }
-        public int ContactId {get; set; }
-		public virtual ICollection<Contact> Contacts { get; set; }
+		public int ContactId { get; set; }
+		public virtual ICollection<MessageContact> MessageContacts { get; set; }
+
+        public Message(string To, string From, string Body, string Status, int MessageId = 0, int ContactId = 0)
+        {
+
+            this.To = To;
+            this.From = From;
+            this.Body = Body;
+            this.Status = Status;
+            this.MessageId = MessageId;
+            this.ContactId = ContactId;
+        }
+
+		public Message()
+		{
+
+		}
 
         public static List<Message> GetMessages()
         {
             var client = new RestClient("https://api.twilio.com/2010-04-01");
-            var request = new RestRequest("Accounts/\" + EnvironmentVariables.AccountSid + \"/Messages.json", Method.GET);
+            var request = new RestRequest("Accounts/" + EnvironmentVariables.AccountSid + "/Messages.json", Method.GET);
             client.Authenticator = new HttpBasicAuthenticator(EnvironmentVariables.AccountSid, EnvironmentVariables.AuthToken);
             var response = new RestResponse();
             Task.Run(async () =>
@@ -41,7 +57,7 @@ namespace Texter.Models
         public void Send()
         {
             var client = new RestClient("https://api.twilio.com/2010-04-01");
-            var request = new RestRequest("Accounts/\" + EnvironmentVariables.AccountSid + \"/Messages", Method.POST);
+            var request = new RestRequest("Accounts/" + EnvironmentVariables.AccountSid + "/Messages", Method.POST);
             request.AddParameter("To", To);
             request.AddParameter("From", From);
             request.AddParameter("Body", Body);
