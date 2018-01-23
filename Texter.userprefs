@@ -1,7 +1,12 @@
 ﻿<Properties StartupConfiguration="{233CF430-A1EF-4868-9158-A0E4BF528BD5}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Texter/Startup.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Texter/Models/ApplicationDbContext.cs">
     <Files>
-      <File FileName="Texter/Startup.cs" Line="71" Column="51" />
+      <File FileName="Texter/Models/ApplicationDbContext.cs" Line="34" Column="1" />
+      <File FileName="Texter/Models/ApplicationUser.cs" Line="13" Column="6" />
+      <File FileName="Texter/Startup.cs" Line="78" Column="48" />
+      <File FileName="Texter/Models/TexterDbContext.cs" Line="14" Column="12" />
+      <File FileName="Texter/Controllers/ContactController.cs" Line="4" Column="30" />
+      <File FileName="Texter/Models/MessageContact.cs" Line="20" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

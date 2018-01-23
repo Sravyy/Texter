@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Texter.Models;
 
@@ -11,12 +12,20 @@ namespace Texter.Controllers
 {
     public class ContactController : Controller
     {
-        // GET: /<controller>/
-        private TexterDbContext db = new TexterDbContext();
+		// GET: /<controller>/
+		private readonly ApplicationDbContext _db;
+		private readonly UserManager<ApplicationUser> _userManager;
+
+		public ContactController(UserManager<ApplicationUser> userManager, ApplicationDbContext db)
+		{
+			_userManager = userManager;
+			_db = db;
+		}
+
         public IActionResult Index()
         {   
             
-            return View(db.Contacts.ToList());
+            return View(_db.Contacts.ToList());
         }
 
         public IActionResult Create()
@@ -27,8 +36,8 @@ namespace Texter.Controllers
         [HttpPost]
         public IActionResult Create(Contact contact)
         {
-            db.Contacts.Add(contact);
-            db.SaveChanges();
+            _db.Contacts.Add(contact);
+            _db.SaveChanges();
             return RedirectToAction("Index");
         }
 
