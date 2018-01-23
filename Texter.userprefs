@@ -1,10 +1,14 @@
 ﻿<Properties StartupConfiguration="{B79515A8-0782-4AB1-8B3E-163D0B910580}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Texter/Models/Message.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Texter/Controllers/HomeController.cs">
     <Files>
-      <File FileName="Texter/Views/Home/Contact.cshtml" Line="1" Column="1" />
-      <File FileName="Texter/Views/Home/About.cshtml" Line="1" Column="1" />
+      <File FileName="Texter/Models/Contact.cs" Line="11" Column="22" />
       <File FileName="Texter/Models/EnvironmentVariables.cs" Line="10" Column="1" />
-      <File FileName="Texter/Models/Message.cs" Line="25" Column="91" />
+      <File FileName="Texter/Models/Message.cs" Line="43" Column="92" />
+      <File FileName="Texter/Models/TexterDbContext.cs" Line="10" Column="6" />
+      <File FileName="Texter/Texter.csproj" Line="21" Column="68" />
+      <File FileName="Texter/Views/Home/SendMessage.cshtml" Line="16" Column="34" />
+      <File FileName="Texter/Views/Home/GetMessages.cshtml" Line="19" Column="39" />
+      <File FileName="Texter/Controllers/HomeController.cs" Line="20" Column="38" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
