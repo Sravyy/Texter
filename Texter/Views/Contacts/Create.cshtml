@@ -1,0 +1,32 @@
+﻿@model Texter.Models.Contact
+
+@{
+    ViewData["Title"] = "Contact - Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="create">
+    <h2>Create a Contact</h2>
+    <hr>
+
+    @using (Html.BeginForm())
+    {
+        @Html.LabelFor(model => model.FirstName)   
+        @Html.EditorFor(model => model.FirstName)
+        <br /><br />
+        @Html.LabelFor(model => model.LastName)   
+        @Html.EditorFor(model => model.LastName)
+        <br /><br />
+        @Html.LabelFor(model => model.  PhoneNo)   
+        @Html.EditorFor(model => model. PhoneNo)
+        <br /><br />
+        <br />
+        <br />
+
+
+        <input type="submit" value="Create" class="btn btn-danger" />
+    }
+    <br /><br /><br /><br />
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -20,6 +20,7 @@ namespace Texter.Models
         public string From { get; set; }
         public string Body { get; set; }
         public string Status { get; set; }
+        public int ContactId {get; set; }
 		public virtual ICollection<Contact> Contacts { get; set; }
 
         public static List<Message> GetMessages()

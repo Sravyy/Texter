@@ -29,8 +29,12 @@
 
   <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="Views\Contacts\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Models\contacts.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Views\Home\Contact.cshtml" />
   </ItemGroup>
 </Project>
