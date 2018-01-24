@@ -54,6 +54,10 @@
     <Compile Remove="Migrations\20180123231710_AuthenticationDbCreation.Designer.cs" />
     <Compile Remove="Migrations\20180123231710_AuthenticationDbCreation.cs" />
     <Compile Remove="Migrations\ApplicationDbContextModelSnapshot.cs" />
+    <Compile Remove="Migrations\20180123232101_AuthenticationDbCreation.Designer.cs" />
+    <Compile Remove="Migrations\20180123232101_AuthenticationDbCreation.cs" />
+    <Compile Remove="Migrations\20180124002208_userAuthToContactModel.Designer.cs" />
+    <Compile Remove="Migrations\20180124002208_userAuthToContactModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Views\Home\Contact.cshtml" />
