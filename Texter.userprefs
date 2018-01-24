@@ -1,5 +1,15 @@
 ﻿<Properties StartupConfiguration="{233CF430-A1EF-4868-9158-A0E4BF528BD5}|Default">
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Texter/Program.cs">
+    <Files>
+      <File FileName="Texter/Controllers/ContactController.cs" Line="37" Column="10" />
+      <File FileName="Texter/Views/Contact/Index.cshtml" Line="36" Column="22" />
+      <File FileName="Texter/Views/Home/Index.cshtml" Line="6" Column="1" />
+      <File FileName="Texter/Views/Contact/Create.cshtml" Line="32" Column="1" />
+      <File FileName="Texter/Controllers/HomeController.cs" Line="36" Column="43" />
+      <File FileName="Texter/Controllers/AccountController.cs" Line="77" Column="4" />
+      <File FileName="Texter/Program.cs" Line="21" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Texter PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

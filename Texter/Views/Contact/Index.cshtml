@@ -5,6 +5,24 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@using System.Security.Claims
+
+<h2>Here is your list of tasks, @User.Identity.Name</h2>
+
+@if (Model.Any())
+{
+    <ul>
+        @foreach (var listItem in Model)
+        {
+            <li>@Html.DisplayFor(modelItem => listItem.Description)</li>
+        }
+    </ul>
+}
+else
+{
+    <p>No Contacts Added Yet!</p>
+}
+
 <div class="indexviews">
     <h2>Contacts</h2>
     <hr />

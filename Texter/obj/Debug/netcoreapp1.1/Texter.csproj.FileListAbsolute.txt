@@ -16,3 +16,4 @@
 /Users/Guest/Desktop/TwilioTextWebApp/Texter/obj/Debug/netcoreapp1.1/Texter.AssemblyInfo.cs
 /Users/Guest/Desktop/TwilioTextWebApp/Texter/obj/Debug/netcoreapp1.1/Texter.dll
 /Users/Guest/Desktop/TwilioTextWebApp/Texter/obj/Debug/netcoreapp1.1/Texter.pdb
+/Users/Guest/Desktop/TwilioTextWebApp/Texter/obj/Debug/netcoreapp1.1/Texter.csproj.CoreCompileInputs.cache

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Texter.Models;
 using System.Security.Claims;
+using Texter.ViewModels;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -18,17 +19,21 @@ namespace Texter.Controllers
 		// GET: /<controller>/
 		private readonly ApplicationDbContext _db;
 		private readonly UserManager<ApplicationUser> _userManager;
+		private readonly SignInManager<ApplicationUser> _signInManager;
 
-		public ContactController(UserManager<ApplicationUser> userManager, ApplicationDbContext db)
+		public ContactController(UserManager<ApplicationUser> userManager, ApplicationDbContext db, SignInManager<ApplicationUser> signInManager)
 		{
 			_userManager = userManager;
+            _signInManager = signInManager;
 			_db = db;
 		}
 
-        public IActionResult Index()
-        {   
-            
-            return View(_db.Contacts.ToList());
+        public async Task<IActionResult> Index()
+        {
+			var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+			var currentUser = await _userManager.FindByIdAsync(userId);
+
+            return View(_db.Contacts.Where(x => x.User.Id == currentUser.Id));
         }
 
         public IActionResult Create()
@@ -39,13 +44,32 @@ namespace Texter.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Contact contact)
         {
-			//var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-			//var currentUser = await _userManager.FindByIdAsync(userId);
-			//contact.User = currentUser;
+			var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+			var currentUser = await _userManager.FindByIdAsync(userId);
+			contact.User = currentUser;
             _db.Contacts.Add(contact);
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+		public IActionResult Login()
+		{
+			return View();
+		}
+
+		[HttpPost]
+		public async Task<IActionResult> Login(LoginViewModel model)
+		{
+			Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, isPersistent: true, lockoutOnFailure: false);
+			if (result.Succeeded)
+			{
+				return RedirectToAction("Index");
+			}
+			else
+			{
+				return View();
+			}
+		}
 
     }
 }
