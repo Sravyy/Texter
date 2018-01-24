@@ -18,6 +18,7 @@ namespace Texter.Models
     
         public virtual ICollection<MessageContact> MessageContacts { get; set; }
 
+        public virtual ApplicationUser User { get; set; }
 	}
 }
 
